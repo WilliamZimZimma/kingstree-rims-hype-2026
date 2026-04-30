@@ -184,7 +184,7 @@
     .pitch-attribution { font-size: 20px; }
     .pitch { padding: 28px 12px; margin: 32px 0; }
     .closing-line { font-size: 32px; }
-    .closing-meta { font-size: 17px; letter-spacing: 0.35em; }
+    .closing-meta { font-size: 17px; letter-spacing: 0.12em; }
     .bottom-mark img { width: 240px; }
     .wrap { padding: 24px 16px 40px; }
   }
@@ -237,7 +237,6 @@
     var box = document.getElementById('videoBox');
 
     function start() {
-      video.controls = true;
       var p = video.play();
       if (p && p.then) p.then(function(){}).catch(function(){});
       btn.classList.add('hidden');
@@ -246,7 +245,15 @@
     btn.addEventListener('click', start);
     box.addEventListener('click', function(e) {
       if (e.target === btn || btn.contains(e.target)) return;
-      if (video.paused && !btn.classList.contains('hidden')) start();
+      if (video.paused) {
+        if (btn.classList.contains('hidden')) {
+          video.play();
+        } else {
+          start();
+        }
+      } else {
+        video.pause();
+      }
     });
   })();
 </script>

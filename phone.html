@@ -137,10 +137,10 @@
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 22px;
     color: #8BAEC8;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.12em;
     font-weight: 600;
     text-transform: uppercase;
-    padding-left: 0.35em;
+    padding-left: 0.12em;
     line-height: 1.4;
   }
 
@@ -200,7 +200,6 @@
     var btn = document.getElementById('playBtn');
     var box = document.getElementById('videoBox');
     function start() {
-      video.controls = true;
       var p = video.play();
       if (p && p.then) p.then(function(){}).catch(function(){});
       btn.classList.add('hidden');
@@ -208,7 +207,15 @@
     btn.addEventListener('click', start);
     box.addEventListener('click', function(e) {
       if (e.target === btn || btn.contains(e.target)) return;
-      if (video.paused && !btn.classList.contains('hidden')) start();
+      if (video.paused) {
+        if (btn.classList.contains('hidden')) {
+          video.play();
+        } else {
+          start();
+        }
+      } else {
+        video.pause();
+      }
     });
   })();
 </script>
