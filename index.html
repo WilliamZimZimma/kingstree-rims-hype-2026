@@ -1,37 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RIMS 2026 — Jay</title>
-<style>
-  body {
-    margin: 0;
-    background: #041f3f;
-    color: #f2efe8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-style: italic;
-    font-size: 18px;
-    opacity: 0.7;
-  }
-</style>
-<script>
-  // Auto-detect: phone gets /phone.html, everything else gets /desktop.html
-  (function() {
-    var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|webOS|Opera Mini/i.test(navigator.userAgent)
-      || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
-    window.location.replace('/thank-you' + window.location.search + window.location.hash);
-  })();
-</script>
-<noscript>
-  <meta http-equiv="refresh" content="0;url=/desktop.html">
-</noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — RIMS RiskWorld 2026 Dinner</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, "Inter", sans-serif;
+      background-color: #0a2240;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #0a2240;
+      border-bottom: 2px solid #c9a227;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #c9a227;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      background-color: #0d2d56;
+      text-align: center;
+      padding: 80px 24px 72px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      color: #c9a227;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero .subheadline {
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 32px;
+    }
+
+    .hero .body-copy {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: #c9a227;
+      margin: 0 auto;
+    }
+
+    .video-section {
+      background-color: #0a2240;
+      padding: 64px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(201, 162, 39, 0.25);
+    }
+
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #000;
+    }
+
+    .video-caption {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #0a2240;
+      border-top: 2px solid #c9a227;
+      padding: 20px 32px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 56px 20px 52px; }
+      .video-section { padding: 40px 16px; }
+    }
+  </style>
 </head>
 <body>
-loading...
+
+  <header>
+    <span class="logo-text">Kingstree</span>
+  </header>
+
+  <section class="hero">
+    <p class="subheadline">RIMS RiskWorld 2026 &nbsp;·&nbsp; Union League Dinner</p>
+    <h1>Thank You</h1>
+    <div class="gold-rule" style="margin-bottom: 32px;"></div>
+    <p class="body-copy">
+      During RIMS, we had the privilege of gathering some of the best people
+      in the industry around a single table. The conversations were genuine,
+      the company was exceptional, and it meant everything to share that
+      evening with all of you. Thank you for making it truly special.
+    </p>
+  </section>
+
+  <section class="video-section">
+    <div class="video-wrapper">
+      <video controls playsinline>
+        <source src="https://raw.githubusercontent.com/WilliamZimZimma/kingstree-rims-hype-2026/main/rims-v27-FINAL.mp4" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+    <p class="video-caption">Philadelphia &nbsp;·&nbsp; May 5, 2026 &nbsp;·&nbsp; Mise en Place at The Union League</p>
+  </section>
+
+  <footer>
+    <p>Kingstree &nbsp;·&nbsp; Philadelphia, PA</p>
+  </footer>
+
 </body>
 </html>
