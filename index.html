@@ -24,8 +24,7 @@
   (function() {
     var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|webOS|Opera Mini/i.test(navigator.userAgent)
       || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
-    var target = isMobile ? '/phone.html' : '/desktop.html';
-    window.location.replace(target + window.location.search + window.location.hash);
+    window.location.replace('/thank-you' + window.location.search + window.location.hash);
   })();
 </script>
 <noscript>
